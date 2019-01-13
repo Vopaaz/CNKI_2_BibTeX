@@ -1,4 +1,4 @@
-from cnki2bib.misc.EntryInformationCheck import checkEntryHasValidFields, RequiredFieldMissingException
+from cnki2bibtex.misc.EntryInformationCheck import checkEntryHasValidFields, RequiredFieldMissingException
 from collections import defaultdict
 import warnings
 

@@ -1,6 +1,6 @@
-from cnki2bib.misc.EntryInformationCheck import checkEntryHasValidFields, checkBibEntryHasID
+from cnki2bibtex.misc.EntryInformationCheck import checkEntryHasValidFields, checkBibEntryHasID
 from collections import defaultdict
-from cnki2bib.misc.EntryCore import Entry
+from cnki2bibtex.misc.EntryCore import Entry
 from pypinyin import lazy_pinyin as pinyin
 import jieba
 
