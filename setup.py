@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='cnki2bib',
-    version='0.0.1',
+    version='0.0.2',
     author='Vopaaz',
     author_email="liyifan945@163.com",
     url="https://github.com/Vopaaz/CNKI_2_BibTeX",

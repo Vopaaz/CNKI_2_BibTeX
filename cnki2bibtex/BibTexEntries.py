@@ -5,8 +5,8 @@ from collections import defaultdict
 import jieba
 from pypinyin import lazy_pinyin as pinyin
 
-from misc.EntryCore import Entry, NOT_FOUND_ANY
-from misc.EntryInformationCheck import (checkBibEntryHasID,
+from .misc.EntryCore import Entry, NOT_FOUND_ANY
+from .misc.EntryInformationCheck import (checkBibEntryHasID,
                                          checkEntryHasValidFields)
 
 

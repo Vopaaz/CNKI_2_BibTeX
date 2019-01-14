@@ -3,8 +3,8 @@ import pyperclip
 import logging
 import os
 
-from BibTexEntries import BibTeXContentStringFactory
-from cnkiNetEntries import CNKINetEntryFactory
+from .BibTexEntries import BibTeXContentStringFactory
+from .cnkiNetEntries import CNKINetEntryFactory
 
 
 def getBibFileContentString(cnkiNetFileContent):
