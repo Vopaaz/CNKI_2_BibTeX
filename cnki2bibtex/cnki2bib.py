@@ -18,9 +18,9 @@ def copyToClipBoard(content):
 
 @click.command()
 @click.argument("inputFile", type=click.Path(exists=True, dir_okay=False))
-@click.option("--copy/--no-copy", "-c/-nc", default=True,help="Whether or not to copy the result to clipboard.")
-@click.option("--outputDefault/--no-outputDefault", "-od/-nod", default=True,help="Whether or not to create a file at the default position.")
-@click.option("--outputfile", "-o", type=click.File('w', encoding="utf8"),help="The path to a certain output file.")
+@click.option("--copy/--no-copy", "-c/-nc", default=True,help="Whether or not to copy the result to clipboard. Default: True")
+@click.option("--outputDefault/--no-outputDefault", "-od/-nod", default=True,help="Whether or not to create a .bib file with the same name as the .net file in its directory. Default: True")
+@click.option("--outputfile", "-o", type=click.File('w', encoding="utf8"),help="Create a certain output .bib file.")
 def launch(inputfile, copy, outputdefault, outputfile):
     '''Converting a NoteExpress Entry .net file exported by CNKI to BibTeX .bib file.'''
 
