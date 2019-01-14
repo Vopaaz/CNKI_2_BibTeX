@@ -1,10 +1,13 @@
-from cnki2bibtex.misc.EntryInformationCheck import checkEntryHasValidFields, checkBibEntryHasID
-from collections import defaultdict
-from cnki2bibtex.misc.EntryCore import Entry
-from pypinyin import lazy_pinyin as pinyin
-import jieba
 import logging
 import re
+from collections import defaultdict
+
+import jieba
+from pypinyin import lazy_pinyin as pinyin
+
+from cnki2bibtex.misc.EntryCore import Entry, NOT_FOUND_ANY
+from cnki2bibtex.misc.EntryInformationCheck import (checkBibEntryHasID,
+                                                    checkEntryHasValidFields)
 
 
 class BibTeXEntry(Entry):
@@ -22,7 +25,7 @@ class BibTeXEntry(Entry):
 
     @staticmethod
     def __cnkiNetEntryMatchThisRule(cnkiNetEntry, rule):
-        for key, target in rule:
+        for key, target in rule.items():
             if cnkiNetEntry[key] != target:
                 return False
         return True
@@ -36,14 +39,16 @@ class BibTeXEntry(Entry):
 
     def generateID(self, cnkiNetEntry):
         title = cnkiNetEntry["Title"]
+        title = re.sub(r"[0-9]", "", title).replace(r'_', "")
         if self.__isFullEnglish(title):
             titleWords = title.strip().split(" ")
-            self.ID = "".join(titleWords[0:min(len(titleWords)-1, 4)])
+            self.ID = "".join(titleWords[0:min(len(titleWords), 4)])
         else:
             jieba.setLogLevel(logging.INFO)
+            title = title.replace(" ", "").replace(u"\u3000", "")
             titleWords = list(jieba.cut(title))
             stringForConvertToPinyin = "".join(
-                titleWords[0:min(len(titleWords)-1, 3)])
+                titleWords[0:min(len(titleWords), 3)])
             self.ID = "".join(pinyin(stringForConvertToPinyin))
 
     def __isFullEnglish(self, string):
@@ -57,15 +62,16 @@ class BibTeXEntry(Entry):
         raise NotImplementedError
 
     def generateOptionalFields(self, cnkiNetEntry):
-        cnkiNetEntry.pop("Reference Type")
         for fieldName in cnkiNetEntry:
-            if cnkiNetEntry.fieldIsNotRecorded(fieldName):
+            if cnkiNetEntry.fieldIsNotRecorded(fieldName) and fieldName not in ["Reference Type", NOT_FOUND_ANY]:
                 self.recordOneOptionalField(cnkiNetEntry, fieldName)
 
     def recordOneOptionalField(self, cnkiNetEntry, fieldName):
-        NOT_SET_LOWER_FIELD_NAME_LIST = ["ISBN"]
+        NOT_SET_LOWER_FIELD_NAME_LIST = ["ISBN", "ISBN/ISSN"]
+        saveFieldName = "".join(
+            fieldName.strip().split(" ")).lower().replace(",", "")
         if fieldName not in NOT_SET_LOWER_FIELD_NAME_LIST:
-            self.fields[fieldName.lower()] = cnkiNetEntry[fieldName]
+            self.fields[saveFieldName] = cnkiNetEntry[fieldName]
         else:
             self.fields[fieldName] = cnkiNetEntry[fieldName]
         cnkiNetEntry.markFieldsAreRecordedInBibEntry(fieldName)
@@ -82,12 +88,8 @@ class BibTeXEntry(Entry):
         for key, value in self.items():
             string += "\t{key} = {{{value}}},\n".format(key=key, value=value)
         string += r"}"
-        string += "\n"
+        string += "\n\n"
         return string
-
-
-class BibTeXEntriesFactory(object):
-    pass  # Todo
 
 
 class Article(BibTeXEntry):
@@ -121,25 +123,26 @@ class Book(BibTeXEntry):
 
     def generateOptionalFields(self, cnkiNetEntry):
         cnkiNetEntry["month"] = cnkiNetEntry["Date"].split("-")[1]
-        cnkiNetEntry["ISBN"] = cnkiNetEntry.pop("图书印刷版ISBN")
+        if "图书印刷版ISBN" in cnkiNetEntry:
+            cnkiNetEntry["ISBN"] = cnkiNetEntry.pop("图书印刷版ISBN")
         super().generateOptionalFields(cnkiNetEntry)
 
 
 class Booklet(BibTeXEntry):
     rules = [{
-        "NOT_FOUND_ANY": "NOT_FOUND_ANY"
+        NOT_FOUND_ANY: NOT_FOUND_ANY
     }]  # There seems to be no entry on CNKI matches this type.
 
 
 class InBook(BibTeXEntry):
     rules = [{
-        "NOT_FOUND_ANY": "NOT_FOUND_ANY"
+        NOT_FOUND_ANY: NOT_FOUND_ANY
     }]  # There seems to be no entry on CNKI matches this type.
 
 
 class InCollection(BibTeXEntry):
     rules = [{
-        "NOT_FOUND_ANY": "NOT_FOUND_ANY"
+        NOT_FOUND_ANY: NOT_FOUND_ANY
     }]  # There seems to be no entry on CNKI matches this type.
 
 
@@ -159,7 +162,7 @@ class InProceedings(BibTeXEntry):
 
 class Manual(BibTeXEntry):
     rules = [{
-        "NOT_FOUND_ANY": "NOT_FOUND_ANY"
+        NOT_FOUND_ANY: NOT_FOUND_ANY
     }]  # There seems to be no entry on CNKI matches this type.
 
 
@@ -178,6 +181,7 @@ class MastersThesis(BibTeXEntry):
             "Author", "Title", "Publisher", "Year"
         )
 
+
 class PhdThesis(BibTeXEntry):
     rules = [{
         "Reference Type": "Thesis",
@@ -193,25 +197,56 @@ class PhdThesis(BibTeXEntry):
             "Author", "Title", "Publisher", "Year"
         )
 
+
 class Proceedings(BibTeXEntry):
     rules = [{
-        "NOT_FOUND_ANY": "NOT_FOUND_ANY"
+        NOT_FOUND_ANY: NOT_FOUND_ANY
     }]  # There seems to be no way to extract the proceeding citation info on CNKI.
-  
+
+
 class TechReport(BibTeXEntry):
     rules = [{
-        "NOT_FOUND_ANY": "NOT_FOUND_ANY"
+        NOT_FOUND_ANY: NOT_FOUND_ANY
     }]  # There seems to be no entry on CNKI matches this type.
+
 
 class Unpublished(BibTeXEntry):
     rules = [{
-        "NOT_FOUND_ANY": "NOT_FOUND_ANY"
+        NOT_FOUND_ANY: NOT_FOUND_ANY
     }]  # There seems to be no entry on CNKI matches this type.
+
 
 class Misc(BibTeXEntry):
     rules = [{
-        "NOT_NECESSARY": "NOT_NECESSARY"
+        NOT_FOUND_ANY: NOT_FOUND_ANY
     }]  # Misc is the entry that matches any case.
+
+    def generateRequiredFieldsAndMarkRecorded(self, cnkiNetEntry):
+        pass
+
+
+class BibTeXContentStringFactory(object):
+    SPECIFIED_ENTRY_TYPE_LIST = [
+        Article, Book, Booklet, InBook, InCollection,
+        InProceedings, Manual, MastersThesis, PhdThesis,
+        Proceedings, TechReport, Unpublished
+    ]
+
+    @classmethod
+    def giveBibFileContentString(cls, cnkiNetEntries):
+        fullString = ""
+        for cnkiEntry in cnkiNetEntries:
+            foundSpecified = False
+            for entryType in cls.SPECIFIED_ENTRY_TYPE_LIST:
+                if entryType.cnkiNetEntryIsThisBibEntryType(cnkiEntry):
+                    fullString += entryType(cnkiEntry).toBibFileString()
+                    foundSpecified = True
+                    break
+            if not foundSpecified:
+                fullString += Misc(cnkiEntry).toBibFileString()
+
+        return fullString
+
 
 class RulesNotValidException(Exception):
     def __init__(self, rules):

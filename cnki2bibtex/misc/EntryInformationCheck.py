@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 class EntryFieldInvalidException(Exception):
     def __init__(self, className):
         self.message = "The fields of {} is invalid.".format(className)
@@ -15,7 +17,7 @@ class BibEntryHasNoIDException(Exception):
 
 def checkEntryHasValidFields(func):
     def inner(self, *args, **kwargs):
-        if not self.fields or not isinstance(self.fields, dict):
+        if not self.fields or not isinstance(self.fields, (dict,defaultdict)):
             raise EntryFieldInvalidException(self.__class__.__name__)
         return func(self, *args, **kwargs)
     return inner

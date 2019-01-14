@@ -1,8 +1,11 @@
-from cnki2bibtex.misc.EntryInformationCheck import checkEntryHasValidFields, RequiredFieldMissingException
-from collections import defaultdict
-import warnings
 import logging
+import warnings
+from collections import defaultdict
 
+from cnki2bibtex.misc.EntryInformationCheck import (RequiredFieldMissingException,
+                                                    checkEntryHasValidFields)
+
+NOT_FOUND_ANY = ""
 
 class Entry(object):
     def __init__(self):
@@ -11,7 +14,7 @@ class Entry(object):
     @checkEntryHasValidFields
     def __getitem__(self, key):
         field = self.fields[key]
-        if not field:
+        if key not in [NOT_FOUND_ANY] and not field:
             field = "Null"
             logger = logging.getLogger(__name__)
             if "Title" not in self.fields:
