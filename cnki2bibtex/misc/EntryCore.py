@@ -1,6 +1,8 @@
 from cnki2bibtex.misc.EntryInformationCheck import checkEntryHasValidFields, RequiredFieldMissingException
 from collections import defaultdict
 import warnings
+import logging
+
 
 class Entry(object):
     def __init__(self):
@@ -10,14 +12,21 @@ class Entry(object):
     def __getitem__(self, key):
         field = self.fields[key]
         if not field:
-            warnings.warn("The {} field in the entry is Empty. Returned as string 'Null'.".format(key))
             field = "Null"
+            logger = logging.getLogger(__name__)
+            if "Title" not in self.fields:
+                logger.warning(
+                    "The {} field in the entry is Empty. Returned as string 'Null'.".format(key))
+            else:
+                logger.warning("The {} field in the entry titled {} is Empty. Returned as string 'Null'.".format(
+                    key, self.fields["Title"]))
         return field
 
     @checkEntryHasValidFields
     def __iter__(self):
         return self.fields.__iter__()
 
+    @checkEntryHasValidFields
     def items(self):
         return self.fields.items()
 
@@ -27,3 +36,6 @@ class Entry(object):
 
     def __setitem__(self, key, value):
         self.fields[key] = value
+
+    def pop(self, key):
+        return self.fields.pop(key)
