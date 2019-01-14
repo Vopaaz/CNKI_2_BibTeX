@@ -2,7 +2,7 @@ import logging
 import warnings
 from collections import defaultdict
 
-from cnki2bibtex.misc.EntryInformationCheck import (RequiredFieldMissingException,
+from .EntryInformationCheck import (RequiredFieldMissingException,
                                                     checkEntryHasValidFields)
 
 NOT_FOUND_ANY = ""

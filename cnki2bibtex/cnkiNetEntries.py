@@ -1,8 +1,8 @@
 import re
 from collections import defaultdict
 
-from cnki2bibtex.misc.EntryCore import Entry
-from cnki2bibtex.misc.EntryInformationCheck import checkEntryHasValidFields
+from misc.EntryCore import Entry
+from misc.EntryInformationCheck import checkEntryHasValidFields
 
 
 class CNKINetEntry(Entry):
