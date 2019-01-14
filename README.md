@@ -1,5 +1,8 @@
 # CNKI_2_BibTeX
-Converting the NoteExpress (.net) file exported by CNKI (中国知网) to BibTeX (.bib) file.  将中国知网导出的 NoteExpress 文献记录转换成 BibTeX 文献记录。
+
+Converting the NoteExpress (.net) file exported by CNKI (中国知网) to BibTeX (.bib) file.  
+
+将中国知网导出的 NoteExpress 文献记录转换成 BibTeX 文献记录。
 
 # Getting Started
 
@@ -34,4 +37,16 @@ Options:
 
 -  `--help`
     - Show this message and exit.
+
+## Export .net File on CNKI
+
+![FxL8Cq.png](https://s2.ax1x.com/2019/01/14/FxL8Cq.png)
+
+## Finally...
+
+Start using BibTeX to manage the literature references.
+
+
+
+
 
