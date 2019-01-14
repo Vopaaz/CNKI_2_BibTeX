@@ -4,6 +4,22 @@ Converting the NoteExpress (.net) file exported by CNKI (中国知网) to BibTeX
 
 将中国知网导出的 NoteExpress 文献记录转换成 BibTeX 文献记录。
 
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [CNKI_2_BibTeX](#cnki2bibtex)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installing](#installing)
+  - [Using](#using)
+  - [Finally...](#finally)
+- [Tricky Usage](#tricky-usage)
+- [Export NoteExpress .net File on CNKI](#export-noteexpress-net-file-on-cnki)
+
+<!-- /code_chunk_output -->
+
+
 # Getting Started
 
 ## Prerequisites
@@ -38,15 +54,22 @@ Options:
 -  `--help`
     - Show this message and exit.
 
-## Export .net File on CNKI
-
-![FxL8Cq.png](https://s2.ax1x.com/2019/01/14/FxL8Cq.png)
 
 ## Finally...
 
 Start using BibTeX to manage the literature references.
 
+# Tricky Usage
+
+You can find `cnki2bib.exe` in your Python\Scripts and set it as the default program to open the .net file. 
+
+Then when you double-click a .net file, the corresponding BibTeX Entries will be copied to your clipborad, and a .bib file would be created on the same directory.
+
+Use the console to check for Exception if it does not work as expected.
 
 
+# Export NoteExpress .net File on CNKI
+
+![FxL8Cq.png](https://s2.ax1x.com/2019/01/14/FxL8Cq.png)
 
 
