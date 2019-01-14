@@ -39,7 +39,8 @@ class BibTeXEntry(Entry):
 
     def generateID(self, cnkiNetEntry):
         title = cnkiNetEntry["Title"]
-        title = re.sub(r"[0-9]", "", title).replace(r'_', "")
+        title = re.sub(r"[0-9]", "", title)
+        title = re.sub(r"[_,;]","",title)
         if self.__isFullEnglish(title):
             titleWords = title.strip().split(" ")
             self.ID = "".join(titleWords[0:min(len(titleWords), 4)])

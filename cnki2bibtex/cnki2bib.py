@@ -21,7 +21,7 @@ def copyToClipBoard(content):
 @click.option("--copy/--no-copy", "-c/-nc", default=True)
 @click.option("--outputDefault/--no-outputDefault", "-od/-nod", default=True)
 @click.option("--outputfile", "-o", type=click.File('w', encoding="utf8"))
-def launcher(inputfile, copy, outputdefault, outputfile):
+def launch(inputfile, copy, outputdefault, outputfile):
     if not copy and not outputdefault and not outputfile:
         click.echo("Why are you calling me ???")
         return
@@ -73,4 +73,4 @@ def launcher(inputfile, copy, outputdefault, outputfile):
 
 
 if __name__ == "__main__":
-    launcher()
+    launch()
