@@ -32,9 +32,9 @@ Converting the NoteExpress (.net) file exported by CNKI (中国知网) to BibTeX
 pip install cnki2bib
 ```
 
-Make sure it's in your `PATH`
-
 ## Using
+
+Make sure it's in your `PATH`.
 
 ```
 cnki2bib [OPTIONS] INPUTFILE
