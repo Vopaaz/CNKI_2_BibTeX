@@ -62,7 +62,7 @@ class BibTeXEntry(Entry):
 
     def fixEntryDifferences(self):
         if "author" in self:
-            self["author"] = self["author"].replace(";;"," and ").replace(";", " and ")
+            self["author"] = self["author"].strip(";").replace(";;"," and ").replace(";", " and ")
         for fieldName, fieldContent in self.items():
             self[fieldName] = fieldContent.replace(r"&",r"\&").replace(r"_",r"\_")
 
