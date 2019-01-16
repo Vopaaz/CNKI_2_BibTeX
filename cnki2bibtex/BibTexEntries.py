@@ -58,6 +58,13 @@ class BibTeXEntry(Entry):
     def generateFields(self, cnkiNetEntry):
         self.generateRequiredFieldsAndMarkRecorded(cnkiNetEntry)
         self.generateOptionalFields(cnkiNetEntry)
+        self.fixEntryDifferences()
+
+    def fixEntryDifferences(self):
+        if "author" in self:
+            self["author"] = self["author"].replace(";;"," and ").replace(";", " and ")
+        for fieldName, fieldContent in self.items():
+            self[fieldName] = fieldContent.replace(r"&",r"\&").replace(r"_",r"\_")
 
     def generateRequiredFieldsAndMarkRecorded(self, cnkiNetEntry):
         raise NotImplementedError
