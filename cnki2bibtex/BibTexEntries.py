@@ -75,13 +75,14 @@ class BibTeXEntry(Entry):
                 self.recordOneOptionalField(cnkiNetEntry, fieldName)
 
     def recordOneOptionalField(self, cnkiNetEntry, fieldName):
-        NOT_SET_LOWER_FIELD_NAME_LIST = ["ISBN", "ISBN/ISSN"]
-        saveFieldName = "".join(
-            fieldName.strip().split(" ")).lower().replace(",", "")
-        if fieldName not in NOT_SET_LOWER_FIELD_NAME_LIST:
-            self.fields[saveFieldName] = cnkiNetEntry[fieldName]
-        else:
-            self.fields[fieldName] = cnkiNetEntry[fieldName]
+        saveFieldNames = fieldName.split("/")
+        NOT_SET_LOWER_FIELD_NAME_LIST = ["ISBN", "ISSN"]
+        for saveFieldName in saveFieldNames:
+            saveFieldName = "".join(saveFieldName.strip().split(" ")).replace(",", "")
+            if saveFieldName not in NOT_SET_LOWER_FIELD_NAME_LIST:
+                self.fields[saveFieldName.lower()] = cnkiNetEntry[fieldName]
+            else:
+                self.fields[saveFieldName] = cnkiNetEntry[fieldName]
         cnkiNetEntry.markFieldsAreRecordedInBibEntry(fieldName)
 
     @checkEntryHasValidFields
