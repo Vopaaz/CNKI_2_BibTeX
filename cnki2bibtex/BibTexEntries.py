@@ -7,7 +7,8 @@ from pypinyin import lazy_pinyin as pinyin
 
 from .misc.EntryCore import Entry, NOT_FOUND_ANY
 from .misc.EntryInformationCheck import (checkBibEntryHasID,
-                                         checkEntryHasValidFields)
+                                        checkEntryHasValidFields)
+from .misc.Configure import getIDFormat
 
 
 class BibTeXEntry(Entry):
@@ -38,9 +39,25 @@ class BibTeXEntry(Entry):
             self.generateID(cnkiNetEntry)
 
     def generateID(self, cnkiNetEntry):
+        idFormat = getIDFormat()
+        if idFormat == "title":
+            self.generateIDInTitleFormat(cnkiNetEntry)
+        elif idFormat == "nameyear":
+            self.generateIDInNameYearFormat(cnkiNetEntry)
+
+    def generateIDInNameYearFormat(self, cnkiNetEntry):
+        name = cnkiNetEntry["Author"].split(";")[0]
+        name = name.replace(" ", "").replace(u"\u3000", "")
+        year = cnkiNetEntry["Year"]
+        if self.__isFullEnglish(name):
+            self.ID = name + year
+        else:
+            self.ID = "".join([i.title() for i in pinyin(name)]) + year
+
+    def generateIDInTitleFormat(self, cnkiNetEntry):
         title = cnkiNetEntry["Title"]
         title = re.sub(r"[0-9]", "", title)
-        title = re.sub(r"[_,;]","",title)
+        title = re.sub(r"[_,;]", "", title)
         if self.__isFullEnglish(title):
             titleWords = title.strip().split(" ")
             self.ID = "".join(titleWords[0:min(len(titleWords), 4)])
@@ -62,9 +79,11 @@ class BibTeXEntry(Entry):
 
     def fixEntryDifferences(self):
         if "author" in self:
-            self["author"] = self["author"].strip(";").replace(";;"," and ").replace(";", " and ")
+            self["author"] = self["author"].strip(";").replace(
+                ";;", " and ").replace(";", " and ")
         for fieldName, fieldContent in self.items():
-            self[fieldName] = fieldContent.replace(r"&",r"\&").replace(r"_",r"\_")
+            self[fieldName] = fieldContent.replace(
+                r"&", r"\&").replace(r"_", r"\_")
 
     def generateRequiredFieldsAndMarkRecorded(self, cnkiNetEntry):
         raise NotImplementedError
@@ -78,7 +97,8 @@ class BibTeXEntry(Entry):
         saveFieldNames = fieldName.split("/")
         NOT_SET_LOWER_FIELD_NAME_LIST = ["ISBN", "ISSN"]
         for saveFieldName in saveFieldNames:
-            saveFieldName = "".join(saveFieldName.strip().split(" ")).replace(",", "")
+            saveFieldName = "".join(
+                saveFieldName.strip().split(" ")).replace(",", "")
             if saveFieldName not in NOT_SET_LOWER_FIELD_NAME_LIST:
                 self.fields[saveFieldName.lower()] = cnkiNetEntry[fieldName]
             else:

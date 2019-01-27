@@ -5,7 +5,7 @@ with open(r'README.md',"r",encoding="utf8") as f:
 
 setup(
     name='cnki2bib',
-    version='0.1.4.dev3',
+    version='0.2.0',
     author='Vopaaz',
     author_email="liyifan945@163.com",
     url="https://github.com/Vopaaz/CNKI_2_BibTeX",
