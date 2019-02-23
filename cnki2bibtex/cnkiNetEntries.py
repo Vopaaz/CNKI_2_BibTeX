@@ -43,14 +43,24 @@ class CNKINetEntry(Entry):
 
 
 class CNKINetEntryFactory(object):
-    @staticmethod
-    def giveAllEntries(fullTextInTheNetFile):
+    def giveAllEntries(self, fullTextInTheNetFile):
         entries = []
-        for block in fullTextInTheNetFile.strip().split("\n\n\n"):
+        for block in fullTextInTheNetFile.strip().split(r"{Reference Type}")[1:]:
+            block = r"{Reference Type}" + block.strip()
+            block = self.preprocessingBlock(block)
             tmp = CNKINetEntry()
             tmp.addAllFieldsFromBlock(block.strip())
             entries.append(tmp)
         return entries
+
+    def preprocessingBlock(self, block):
+        block = self.fixLineBreakInContent(block)
+        return block
+
+    def fixLineBreakInContent(self, block):
+        block = re.sub("\n+", "\n", block)
+        block = re.sub("\n([^\{])", lambda matchObj: matchObj.group(1), block)
+        return block
 
 
 class FieldNotInEntryException(Exception):
