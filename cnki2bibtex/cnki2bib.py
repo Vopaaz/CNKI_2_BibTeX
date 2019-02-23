@@ -9,7 +9,7 @@ from .misc.Configure import setIDFormat
 
 
 def getBibFileContentString(cnkiNetFileContent):
-    cnkiNetEntries = CNKINetEntryFactory.giveAllEntries(cnkiNetFileContent)
+    cnkiNetEntries = CNKINetEntryFactory().giveAllEntries(cnkiNetFileContent)
     return BibTeXContentStringFactory.giveBibFileContentString(cnkiNetEntries)
 
 
