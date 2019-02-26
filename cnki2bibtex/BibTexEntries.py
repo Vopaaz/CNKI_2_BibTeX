@@ -46,7 +46,7 @@ class BibTeXEntry(Entry):
             self.generateIDInNameYearFormat(cnkiNetEntry)
 
     def generateIDInNameYearFormat(self, cnkiNetEntry):
-        name = cnkiNetEntry["Author"].split(";")[0]
+        name = cnkiNetEntry["Author"].split(";")[0].split(",")[0].split("，")[0]
         name = name.replace(" ", "").replace(u"\u3000", "")
         year = cnkiNetEntry["Year"]
         if self.__isFullEnglish(name):
@@ -81,6 +81,8 @@ class BibTeXEntry(Entry):
         if "author" in self:
             self["author"] = self["author"].strip(";").replace(
                 ";;", " and ").replace(";", " and ")
+            if not self.__isFullEnglish(self["author"]):
+                self["author"] = self["author"].replace(","," and ").replace("，"," and ")
         for fieldName, fieldContent in self.items():
             self[fieldName] = fieldContent.replace(
                 r"&", r"\&").replace(r"_", r"\_")
