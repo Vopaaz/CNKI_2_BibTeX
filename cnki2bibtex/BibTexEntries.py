@@ -7,7 +7,7 @@ from pypinyin import lazy_pinyin as pinyin
 
 from .misc.EntryCore import Entry, NOT_FOUND_ANY
 from .misc.EntryInformationCheck import (checkBibEntryHasID,
-                                        checkEntryHasValidFields)
+                                         checkEntryHasValidFields)
 from .misc.Configure import getIDFormat
 
 
@@ -82,7 +82,8 @@ class BibTeXEntry(Entry):
             self["author"] = self["author"].strip(";").replace(
                 ";;", " and ").replace(";", " and ")
             if not self.__isFullEnglish(self["author"]):
-                self["author"] = self["author"].replace(","," and ").replace("，"," and ")
+                self["author"] = self["author"].replace(
+                    ",", " and ").replace("，", " and ")
         for fieldName, fieldContent in self.items():
             self[fieldName] = fieldContent.replace(
                 r"&", r"\&").replace(r"_", r"\_")
