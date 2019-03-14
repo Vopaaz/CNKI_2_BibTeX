@@ -3,9 +3,10 @@ import warnings
 from collections import defaultdict
 
 from .EntryInformationCheck import (RequiredFieldMissingException,
-                                                    checkEntryHasValidFields)
+                                    checkEntryHasValidFields)
 
 NOT_FOUND_ANY = ""
+
 
 class Entry(object):
     def __init__(self):
