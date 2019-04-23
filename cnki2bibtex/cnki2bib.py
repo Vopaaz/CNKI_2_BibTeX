@@ -21,7 +21,7 @@ def copyToClipBoard(content):
 @click.argument("inputFile", type=click.Path(exists=True, dir_okay=False))
 @click.option("--copy/--no-copy", "-c/-nc", default=True, help="Whether or not to copy the result to clipboard. Default: True")
 @click.option("--outputDefault/--no-outputDefault", "-od/-nod", default=True, help="Whether or not to create a .bib file with the same name as the .net file in its directory. Default: True")
-@click.option("--outputfile", "-o", type=click.File('w', encoding="utf8"), help="Create a certain output .bib file.")
+@click.option("--outputfile", "-o", type=click.File('w', encoding="utf-8"), help="Create a certain output .bib file.")
 @click.option("--id-format", "-f", type=click.Choice(['title', 'nameyear']), help="Choose the format of the ID. Pinyin of the first words in the title, or pinyin of the first author plus year")
 def launch(inputfile, copy, outputdefault, outputfile, id_format):
     '''Converting a NoteExpress Entry .net file exported by CNKI to BibTeX .bib file.'''
@@ -38,7 +38,7 @@ def launch(inputfile, copy, outputdefault, outputfile, id_format):
         setIDFormat(id_format)
 
     try:
-        with open(inputfile, 'r', encoding="utf8") as f:
+        with open(inputfile, 'r', encoding="utf-8") as f:
             cnkiNetFileContent = f.read()
     except:
         click.echo("Failed to open the file. Please check input path.")
@@ -60,7 +60,7 @@ def launch(inputfile, copy, outputdefault, outputfile, id_format):
     if outputdefault:
         try:
             targetPath = os.path.splitext(inputfile)[0] + ".bib"
-            with open(targetPath, "w", encoding="utf8") as f:
+            with open(targetPath, "w", encoding="utf-8") as f:
                 f.write(bibFileString)
             click.echo(
                 "File '{}' is created at the same directory as the source file.".format(os.path.basename(targetPath)))

@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 
-with open(r'README.md',"r",encoding="utf8") as f:
+with open(r'README.md',"r",encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
     name='cnki2bib',
-    version='0.2.3',
+    version='0.2.4',
     author='Vopaaz',
     author_email="liyifan945@163.com",
     url="https://github.com/Vopaaz/CNKI_2_BibTeX",
