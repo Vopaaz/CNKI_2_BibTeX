@@ -4,7 +4,8 @@ Converting the NoteExpress (.net) file exported by CNKI (中国知网) to BibTeX
 
 将中国知网导出的 NoteExpress 文献记录转换成 BibTeX 文献记录。
 
-![PyPI - Downloads](https://img.shields.io/pypi/dm/cnki2bib)
+[![Downloads](https://pepy.tech/badge/cnki2bib)](https://pepy.tech/project/cnki2bib)
+[![Downloads](https://pepy.tech/badge/cnki2bib/month)](https://pepy.tech/project/cnki2bib/month)
 ![GitHub](https://img.shields.io/github/license/vopaaz/cnki_2_bibtex)
 ![PyPI](https://img.shields.io/pypi/v/cnki2bib)
 
@@ -62,7 +63,7 @@ Options:
       - The first several words (or their pinyin) in the title
       - The first author (or the pinyin) plus year.
     - Default: `title`
-    - Once you have assigned a format, your choice will be saved in `~\.cnki2bib.cfg`. It is unnecessary to type this choice since then.
+    - Once you have assigned a format, your choice will be saved in `~/.cnki2bib.cfg`. It is unnecessary to type this choice since then.
 
 -  `--help`
     - Show this message and exit.
@@ -74,7 +75,7 @@ Start using BibTeX to manage the literature references.
 
 # Tricky Usage
 
-You can find `cnki2bib.exe` in your Python\Scripts and set it as the default program to open the .net file.
+You can find `cnki2bib.exe` in your Python/Scripts and set it as the default program to open the .net file.
 
 Then when you double-click a .net file, the corresponding BibTeX Entries will be copied to your clipborad, and a .bib file would be created on the same directory.
 
