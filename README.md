@@ -21,6 +21,7 @@ Converting the NoteExpress (.net) file exported by CNKI (中国知网) to BibTeX
   - [Finally...](#finally)
 - [Tricky Usage](#tricky-usage)
 - [Export NoteExpress .net File on CNKI](#export-noteexpress-net-file-on-cnki)
+- [Copy NoteExpress Entry content to the clipboard.](#copy-noteexpress-entry-content-to-the-clipboard)
 
 <!-- /code_chunk_output -->
 
@@ -42,8 +43,13 @@ pip install cnki2bib
 Make sure it's in your `PATH`.
 
 ```
-cnki2bib [OPTIONS] INPUTFILE
+cnki2bib [OPTIONS] [INPUTFILE]
 ```
+
+Arguments:
+
+- INPUTFILE:
+  - The input .net file to be converted. If left blank, the contents in the clipboard will be used.
 
 Options:
 
@@ -52,8 +58,9 @@ Options:
     - Default: `True`
 
 -  `-od, --outputDefault / -nod, --no-outputDefault`
-    - Whether or not to create a .bib file with the same name as the .net file in its directory.
-    - Default: `True`
+    - Whether or not to create a default .bib file.
+    - It has the same name as the source .net file in its directory.
+    - Or if the input source is clipboard, it will be 'out.bib' in current working directory. - Default: True
 
 -  `-o, --outputfile FILENAME`
     - Create a  certain output .bib file.
@@ -86,7 +93,8 @@ Use the console to check for Exception if it does not work as expected.
 
 ![FxL8Cq.png](https://s2.ax1x.com/2019/01/14/FxL8Cq.png)
 
-# Or read the NoteExpress Entry content from the clipboard.
-Then just run `cnki2bib` in the terminal. The corresponding BibTeX Entries will be copied to your clipboard, and an 'out.bib' file is created at the current directory. :smile:
+# Copy NoteExpress Entry content to the clipboard.
 
 ![FxL8Cq.png](https://github.com/SNBQT/share-images/blob/master/cnki2bib.png?raw=true)
+
+Then just run `cnki2bib` in the terminal. The corresponding BibTeX Entries will be copied to your clipboard, and an 'out.bib' file is created at the current directory. :smile:
