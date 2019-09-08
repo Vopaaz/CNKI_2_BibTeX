@@ -86,4 +86,7 @@ Use the console to check for Exception if it does not work as expected.
 
 ![FxL8Cq.png](https://s2.ax1x.com/2019/01/14/FxL8Cq.png)
 
+# Or read the NoteExpress Entry content from the clipboard.
+Then just run `cnki2bib` in the terminal. The corresponding BibTeX Entries will be copied to your clipboard, and an 'out.bib' file is created at the current directory. :smile:
 
+![FxL8Cq.png](https://github.com/SNBQT/share-images/blob/master/cnki2bib.png?raw=true)
