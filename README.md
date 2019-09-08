@@ -95,6 +95,8 @@ Use the console to check for Exception if it does not work as expected.
 
 # Copy NoteExpress Entry content to the clipboard.
 
+You have to enable Flash to see the "Copy to clipboard" button.
+
 ![FxL8Cq.png](https://github.com/SNBQT/share-images/blob/master/cnki2bib.png?raw=true)
 
 Then just run `cnki2bib` in the terminal. The corresponding BibTeX Entries will be copied to your clipboard, and an 'out.bib' file is created at the current directory. :smile:
