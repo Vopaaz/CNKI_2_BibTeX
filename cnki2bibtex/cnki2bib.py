@@ -72,11 +72,15 @@ Arguments:
                           0] if inputfile else "out") + ".bib"
             with open(targetPath, "w", encoding="utf-8") as f:
                 f.write(bibFileString)
-            click.echo(
-                "File '{}' is created at the same directory as the source file.".format(os.path.basename(targetPath)))
+
+            if inputfile:
+                click.echo(
+                    "File '{}' is created at the same directory as the source file.".format(os.path.basename(targetPath)))
+            else:
+                click.echo("File 'out.bib' is created at current directory.")
         except Exception as e:
             click.echo(
-                "Failed to write a .bib file at the same directory as the source file.")
+                "Failed to write the default output .bib file.")
             click.echo("Error message:\n" + str(e))
 
     if outputfile:
