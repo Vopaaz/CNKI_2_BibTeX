@@ -15,7 +15,7 @@ Converting the NoteExpress (.net) file exported by CNKI (中国知网) to BibTeX
 
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Installing](#installing)
+  - [Installing](#installation)
   - [Using](#using)
   - [Finally...](#finally)
 - [Tricky Usage](#tricky-usage)
