@@ -13,7 +13,6 @@ Converting the NoteExpress (.net) file exported by CNKI (中国知网) to BibTeX
 
 <!-- code_chunk_output -->
 
-- [CNKI_2_BibTeX](#cnki2bibtex)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installing](#installing)
@@ -26,19 +25,19 @@ Converting the NoteExpress (.net) file exported by CNKI (中国知网) to BibTeX
 <!-- /code_chunk_output -->
 
 
-# Getting Started
+## Getting Started
 
-## Prerequisites
+### Prerequisites
 
 - Python3
 
-## Installing
+### Installation
 
 ```
 pip install cnki2bib
 ```
 
-## Using
+### Using
 
 Make sure it's in your `PATH`.
 
@@ -60,7 +59,8 @@ Options:
 -  `-od, --outputDefault / -nod, --no-outputDefault`
     - Whether or not to create a default .bib file.
     - It has the same name as the source .net file in its directory.
-    - Or if the input source is clipboard, it will be 'out.bib' in current working directory. - Default: True
+    - Or if the input source is clipboard, it will be 'out.bib' in current working directory. 
+    - Default: True
 
 -  `-o, --outputfile FILENAME`
     - Create a  certain output .bib file.
@@ -76,11 +76,11 @@ Options:
     - Show this message and exit.
 
 
-## Finally...
+### Finally...
 
 Start using BibTeX to manage the literature references.
 
-# Tricky Usage
+## Tricky Usage
 
 You can find `cnki2bib.exe` in your Python/Scripts and set it as the default program to open the .net file.
 
@@ -89,13 +89,13 @@ Then when you double-click a .net file, the corresponding BibTeX Entries will be
 Use the console to check for Exception if it does not work as expected.
 
 
-# Export NoteExpress .net File on CNKI
+## Export NoteExpress .net File on CNKI
 
 ![FxL8Cq.png](https://s2.ax1x.com/2019/01/14/FxL8Cq.png)
 
-# Copy NoteExpress Entry content to the clipboard.
+## Copy NoteExpress Entry content to the clipboard.
 
-You have to enable Flash to see the "Copy to clipboard" button.
+**You have to enable Flash to see the "Copy to clipboard" button.**
 
 ![FxL8Cq.png](https://github.com/SNBQT/share-images/blob/master/cnki2bib.png?raw=true)
 
