@@ -14,4 +14,5 @@ class IntegrationTest(unittest.TestCase):
             net = os.path.splitext(bib)[0] + ".net"
             with open(bib, "r", encoding="utf-8") as b,\
                     open(net, "r", encoding="utf-8") as n:
-                self.assertEqual(b.read(), getBibFileContentString(n.read()))
+                self.assertEqual(b.read().replace("\n", "").replace("\r", ""),
+                                 getBibFileContentString(n.read()).replace("\n", "").replace("\r", ""))
