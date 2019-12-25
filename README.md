@@ -8,19 +8,22 @@ Converting the NoteExpress (.net) file exported by CNKI (中国知网) to BibTeX
 [![Downloads](https://pepy.tech/badge/cnki2bib/month)](https://pepy.tech/project/cnki2bib/month)
 ![GitHub](https://img.shields.io/github/license/vopaaz/cnki_2_bibtex)
 ![PyPI](https://img.shields.io/pypi/v/cnki2bib)
+[![Actions Status](https://github.com/Vopaaz/CNKI_2_BibTeX/workflows/CI/badge.svg)](https://github.com/Vopaaz/CNKI_2_BibTeX/actions)
+[![codecov](https://codecov.io/gh/Vopaaz/CNKI_2_BibTeX/branch/master/graph/badge.svg)](https://codecov.io/gh/Vopaaz/CNKI_2_BibTeX)
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
 
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Using](#using)
-  - [Finally...](#finally)
-- [Tricky Usage](#tricky-usage)
-- [Export NoteExpress .net File on CNKI](#export-noteexpress-net-file-on-cnki)
-- [Copy NoteExpress Entry content to the clipboard.](#copy-noteexpress-entry-content-to-the-clipboard)
+- [CNKI_2_BibTeX](#cnki2bibtex)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Using](#using)
+    - [Finally...](#finally)
+  - [Tricky Usage](#tricky-usage)
+  - [Export NoteExpress .net File on CNKI](#export-noteexpress-net-file-on-cnki)
+  - [Copy NoteExpress Entry content to the clipboard.](#copy-noteexpress-entry-content-to-the-clipboard)
 
 <!-- /code_chunk_output -->
 
