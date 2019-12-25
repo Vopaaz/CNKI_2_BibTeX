@@ -1,0 +1,178 @@
+{Reference Type}: Journal Article
+{Title}: Does converting abandoned railways to greenways impact neighboring housing prices?
+{Author}: Youngre Noh
+{Author Address}: Department of Landscape Architecture and Urban Planning, Texas A&M University, College Station, TX 77843-3137, USA
+{Journal}: Landscape and Urban Planning
+{Year}: 2019
+{Volume}: 183
+{Keywords}: Spatial hedonic model;AITS-DID;Greenway;Railroad;Property value;Brownfield: trail
+{Abstract}: Abstract(#br)This research examines the housing market before and after abandoned railways are converted into greenways. Two different hedonic pricing models are employed to analyze changes in the impact and trend of the change—spatial regressions for before and after the conversion and the Adjusted Interrupted Time Series-Difference in Differences (AITS-DID) model. Analyzing 2005–2012 single-family home sale transactions in the City of Whittier, California the results show that converting the abandoned railway into a greenway increases property values. Upon the completion of the greenway, the positive association with the greenway proximity increased in both models. The premium also exists in the pre-conversion period. The sellers’ and buyers’ expectation of the greenway being an amenity factored into the housing market even during the construction of the greenway. After the conversion, properties near the greenway experienced a negative trend in their value.
+{ISBN/ISSN}: 0169-2046
+{Database Provider}: CNKI
+
+
+{Reference Type}: Journal Article
+{Title}: 基于灰色关联分析法的铁路物流服务方案评价
+{Author}: 唐力;刘启钢;孙文桥
+{Author Address}: 1.中国铁道科学研究院 研究生部；2.中国铁道科学研究院集团有限公司 运输及经济研究所
+{Journal}: 铁道运输与经济
+{Year}: 2019
+{Issue}: 01
+{Pages}: 7-12
+{Keywords}: 铁路物流;服务方案;评价指标;灰色关联分析法;实例分析
+{Abstract}: 选择合理的铁路物流服务方案对优化物流资源配置、提高铁路物流服务质量具有重要意义。针对铁路物流服务方案数量多、部分方案服务质量不高等问题,结合评价指标体系构建原则,选择经济性能、技术性能、服务水平和社会服务4个方面的评价指标,建立铁路物流服务方案评价指标体系,提出基于灰色关联分析法的铁路物流服务方案评价方法,并通过案例分析阐述该评价方法的可行性。评价结果表明,灰色关联分析法具有有效性和合理性,能够为铁路物流服务方案评价问题提供客观的科学依据。
+{ISBN/ISSN}: 1003-1421
+{Notes}: 11-1949/U
+{Database Provider}: CNKI
+
+
+{Reference Type}: Thesis
+{Title}: 云环境下铁路“门到门”货运产品设计优化方法研究
+{Author}: 殷玮川
+{Tertiary Author}: 何世伟
+{Publisher}: 北京交通大学
+{Type of Work}: 博士
+{Year}: 2018
+{Keywords}: 铁路运输;;“门到门”货运产品;;产品设计;;服务网络优化;;云计算;;大数据;;支持向量机;;IBM DOcplexcloud软件
+{Abstract}: 近年来,中国经济在新常态下发生的结构转型和调整变化对货运市场的供需关系和货源结构都产生了巨大的影响。货运市场的高附加值“白货”等货物比例增加,高附加值货物的地位相比过去不断提高,客户对于货运服务需求更加多样化,这些对铁路货运服务提出了更高的要求。铁路在全面推进物流化战略背景下,积极开拓货源市场,设计多样化的服务产品和提升服务质量都成为重要手段。铁路“门到门”货物运输就是在货运需求向延伸服务、全程服务发展背景下应运而生的,铁路“门到门”货运产品是铁路货物“门到门”运输的重要载体和主要形式,开行铁路“门到门”货运产品有利于铁路吸引货源,抢占货运市场份额,增强铁路在货运市场的影响力。在“互联网+”的新时代下,云计算和大数据技术的应用场景不断丰富,融入人们的生活和工作场景中,在多个行业已经发挥了巨大的作用。在铁路运营生产工作中引入云计算和大数据技术将有效提升工作效率,改进传统的工作模式,因此本文结合云计算和大数据技术,对铁路“门到门”货运产品的设计方法进行研究,主要研究内容包括以下几个方面:(1)对铁路“门到门”货运产品设计理论进行阐述,以货物运输规划流程为基础,分别对铁路“门到门”货运产品的概念、背景、设计原则和流程进行界定,并对云环境在铁路“门到门”货运产品设计中的应用进行分析。提出了基于云平台的自建接取送达和外包接取送达两种铁路“门到门”货运产品运输组织模式,并对这两种运输组织模式的经济效益分析。最后设计铁路“门到门”货运产品云平台的运作模式、功能模块、架构框架以及运营收益分析。(2)研究了铁路“门到门”货运服务网络构建方法,分别提出基于云聚类和基于轴辐式网络模型的铁路“门到门”货运服务网络构建方法,并采用基于支持向量回归机的铁路“门到门”货运服务网络构建评价方法对构建的服务网络进行评价,在考虑货物运到时限约束基础上,改进传统轴辐式网络模型,提出铁路“门到门”货运服务网络构建数学优化模型,以列车实绩运行大数据的计算参数来代替传统优化方法的参数设置。(3)研究了铁路“门到门”货运服务网络流量分配问题。采用节点拆分方法描述铁路干线运输作业环节以及铁路运输与公路运输转运作业环节,有助于细化对铁路“门到门”运输全流程作业的研究。在改进传统的网络流量分配模型基础上构建了铁路“门到门”货运服务网络的流量分配数学优化模型,采用基于时空服务网络的K短路搜索算法生成货流可行路径集,基于优化模型提出了基于云计算的求解方法框架。在求解数学模型过程中,借助云资源和IBM ILOGCplex内置的优化算法求解器,采用IBM DOcplexcloud软件求解。(4)研究了铁路“门到门”货运产品设计问题,提出铁路“门到门”货运产品备选集生成策略,在考虑铁路干线和公路支线运输服务相关约束基础上,构建铁路“门到门”货运产品设计数学优化模型,并提出了包括数据准备阶段、数据分析阶段、服务网络构建阶段、生成铁路“门到门”货运产品备选集和货运产品设计阶段这五个步骤的铁路“门到门”货运产品设计求解方法框架,将传统分作业环节计算普速产品旅行时间的方法改进为引入铁路实际列车运行大数据计算,并将结果作为基准带入数学优化模型中利用IBM DOcplexcloud软件进行求解提升产品设计的精准性。(5)选取京广线南段武汉北至江村区段为案例背景,进行了实例验证。说明了论文研究的实用价值和意义。
+{Database Provider}: CNKI
+
+
+{Reference Type}: Thesis
+{Title}: 我国铁路客运站建筑空间室内设计方法研究
+{Author}: 胡增辉
+{Tertiary Author}: 孙伟
+{Publisher}: 北京交通大学
+{Type of Work}: 硕士
+{Year}: 2018
+{Keywords}: 铁路客运站;;风格;;室内设计;;方法
+{Abstract}: 1881年,我国第一条铁路——唐山到胥各庄的唐胥铁路修建落成,随之我国第一座火车站——唐山火车站也于1882年建成营运。纵观我国铁路百余年发展历史,铁路客运站从初期简单的列车停靠站点,到功能完善的、为铁路旅客提供舒适乘降服务的公共建筑空间,时至今日,已发展为集多种交通方式与城市功能于一体的大型综合交通枢纽。时代变迁,伴随建筑功能与形式的转变,铁路客运站室内设计也呈现出丰富多彩的个性特征,本论文研究发现,铁路客运站室内设计不仅融合公共建筑室内设计的共性,更具有铁路交通运输的独特印记,其设计风格经历了近代时期的折中主义风格、苏维埃式风格和标准化样式,建国之后带有装饰主义色彩的民族形式新风格与地方特色凸显的岭南风格,到改革开放后的现代主义风格和初具地域特点的风格,再发展为注重功能与服务、具有现代主义特征的新风格、融入地方特色的地域风格、注重生态景观设计特点及个别客运站还原昔日面貌的折中主义风格的转变。本文的主要研究内容分为两个部分,首先,从历史的角度出发,采用以史带论的研究方法,选取不同时段内具有代表性的铁路客运站设计案例进行深入剖析,从而研究我国铁路客运站的室内设计特点与发展变化规律,梳理我国铁路客运站室内设计的设计风格与发展脉络,探索其发展变化的规律与特征。然后,研究铁路客运站建筑室内界面、家具与陈设的设计,寻找出适合于我国当代铁路客运站室内设计的策略与方法,丰富我国铁路客运站室内设计方面的理论研究,希望能为今后的设计提供一些借鉴,为旅客创造一个更好的室内乘车环境。
+{Database Provider}: CNKI
+
+
+{Reference Type}: Conference Proceedings
+{Title}: 城市竖向对下凹式立交桥积水风险的影响
+{Tertiary Title}: 共享与品质——2018中国城市规划年会论文集（01城市安全与防灾规划）
+{Author}: 史德雯
+{Author Address}: 北京市首都规划设计工程咨询开发有限公司;
+{Secondary Title}: 2018中国城市规划年会
+{Place Published}: 中国浙江杭州
+{Subsidiary Author,}: 中国城市规划学会、杭州市人民政府
+{Year}: 2018
+{Pages}: 9
+{Keywords}: 下凹式立交桥;城市竖向;内涝;积水风险
+{Abstract}: 城市排水防涝系统是保障城市安全运行、维护人民生命财产安全的重要基础设施。近年来城市汛期北京市下凹桥区积水情况时有发生,本文分析了丰裕铁路桥的积水原因,发现由于城市竖向没有考虑内涝积水风险,造成大面积客水汇入下凹桥区,造成了严重积水。结合该桥区周围地区建设计划,将防涝风险反馈至地区竖向规划,通过对用地、道路的竖向改造使桥区客水范围大大缩减,降低了下凹桥区的防涝风险,引导该地区在开发建设的过程中避免产生内涝积水。
+{Database Provider}: CNKI
+
+
+{Reference Type}: Newspaper Article
+{Title}: 坚持在大局下行动
+{Author}: 本报评论员
+{Secondary Title}: 人民铁道
+{Date}: 2019-01-09
+{Pages}: A01
+{Publisher}: 人民铁道
+{Notes}: 11-0096
+{Database Provider}: CNKI
+
+
+{Reference Type}: Book
+{Title}: Making Tracks
+{Author}: Iain Docherty
+{Publisher}: Taylor and Francis
+{Date}: 2020-10-12
+{图书印刷版ISBN}: 9780429834646
+{Database Provider}: CNKI
+
+
+{Reference Type}: Standard
+{Title}: 六、固定资产投资和建筑业　6-10 按行业分建筑业企业生产情况
+{Keywords}: 6-10 按行业分建筑业企业生产情况
+{SrcDatabase}: 年鉴
+{Database Provider}: CNKI
+
+
+{Reference Type}: Standard
+{Title}: 1 综合　1-5 国民经济和社会发展主要指标
+{Keywords}: 万人,capita,Number,income,总量指标,平方米,人均可支配收入,旅客周转量,商品零售价格,邮路总长度,
+{SrcDatabase}: 统计年鉴
+{Database Provider}: CNKI
+
+
+{Reference Type}: Patent
+{Title}: 一种铁路故障检测器清洗装置
+{Author}: 段祥祥
+{Author Address}: 241000 安徽省芜湖市镜湖区华强广场C座办公楼2409室
+{Subsidiary Author}: 芜湖华佳新能源技术有限公司
+{Date}: 2018-11-02
+{Notes}: CN108722921A
+{Type of Work}: CN108722921A
+{Abstract}: 本发明公开了一种铁路故障检测器清洗装置,包括底座,所述底座的上表面通过第一固定杆与第一驱动装置的下表面固定连接,所述第一驱动装置的正面与第一连接杆的背面固定连接,所述第一连接杆的正面与第二连接杆的背面固定连接,所述第二连接杆的顶端与挤压块的下表面固定连接,所述挤压块的上表面与载物板的下表面搭接。该铁路故障检测器清洗装置,通过通过第一电机、转盘、第一连接杆、第二连接杆、挤压块、载物板、第二电机、主动轮、从动轮、皮带、转轴和擦物块之间的相互配合,从而使得擦物块对检测器本体进行擦洗,从而不需要工作人员再手动擦拭检测器本体,从而方便了工作人员对计算机的使用,方便了工作人员的工作。
+{Subject}: 1.一种铁路故障检测器清洗装置,包括底座(1),其特征在于：所述底座(1)的上表面通过第一固定杆(2)与第一驱动装置(3)的下表面固定连接,所述第一驱动装置(3)的正面与第一连接杆(4)的背面固定连接,所述第一连接杆(4)的正面与第二连接杆(5)的背面固定连接,所述第二连接杆(5)的顶端与挤压块(6)的下表面固定连接,所述挤压块(6)的上表面与载物板(7)的下表面搭接,所述载物板(7)的下表面通过两个伸缩装置(8)与底座(1)的上表面固定连接,且两个伸缩装置(8)分别位于第一驱动装置(3)的左右两侧,所述载物板(7)的上表面开设有凹槽(9),所述凹槽(9)内壁的下表面与底板(10)的下表面搭接,所述底板(10)的上表面通过支撑腿(11)与固定板(12)的下表面固定连接,所述固定板(12)的正面与检测器本体(13)的背面固定连接,所述载物板(7)的上表面固定连接有两个挡块(14),且两个挡块(14)的相对面均固定连接有电动推杆(27),且两个电动推杆(27)的相对面均固定连接有挤压板(16),所述载物板(7)的左右两侧面分别与两个滑块(28)的相对面固定连接,且两个滑块(28)分别滑动连接在两个滑槽(15)内,且两个滑槽(15)分别开设在两个支撑板(17)的相对面,且两个支撑板(17)的下表面均与底座(1)的上表面固定连接,且两个支撑板(17)的相对面均卡接有轴承(18),且两个轴承(18)内套接有同一个转轴(19),所述转轴(19)的表面固定连接有擦物块(20),且擦物块(20)的背面与检测器本体(13)的正面搭接,所述转轴(19)的表面固定连接有从动轮(21),所述从动轮(21)通过皮带(22)与第二驱动装置(23)传动连接,所述第二驱动装置(23)的下表面通过第二固定杆(24)与底座(1)的上表面固定连接,且第二驱动装置(23)位于左侧面支撑板(17)的左侧。
+{SrcDatabase}: 中国专利
+
+
+{Reference Type}: Standard
+{Title}: 铁路调车作业标准　铁路调车作业标准基本规定
+{Author}: 铁道部运输局
+{Publisher}: 国家技术监督局
+{Date}: 1996-03-15
+{ISBN}: GB/T 7178.1-1996
+{TryDate}: 1996-08-01
+{Keywords}: 作业标准;铁路调车;
+{SrcDatabase}: 国家标准
+{Database Provider}: CNKI
+
+
+{Reference Type}: Standard
+{Title}: 铁路桥涵设计基本规范
+{ISBN}: TB 10002.1-2005
+{TryDate}: 2005-06-14
+{Keywords}: 铁路桥涵;设计基本规范;桥涵
+{SrcDatabase}: 标准
+{Database Provider}: CNKI
+
+
+{Reference Type}: Journal Article
+{Title}: 创新能力培养视域下高职院校解剖学教学改革思考
+{Author}: 娄丽芳;
+{Author Address}: 郑州铁路职业技术学院药学院;
+{Journal}: 科教文汇(下旬刊)
+{Year}: 2018
+{Issue}: 12
+{Pages}: 79-80
+{Keywords}: 创新能力;;解剖学教学;;培养途径
+{Abstract}: 新的职业院校人才培养模式要求学生不仅能扎实地掌握知识,更重要的是能灵活运用知识进行创造性的工作。解剖学作为一门重要的医学基础课,多年来,教学研究者们一直致力于人才培养模式、课程体系、教学内容、教学方法的改革,以适应时代创新发展需要。本文针对实际教学情况,分析高职院校解剖学教学过程中创新能力培养的制约条件,并提出要及时转变教学理念,优化课堂教学过程,创新教学评价过程,积极营造有利于培养学生创新能力的氛围。
+{ISBN/ISSN}: 1672-7894
+{Notes}: 34-1274/G
+{Database Provider}: CNKI
+
+
+{Reference Type}: Journal Article
+{Title}: 携手前进,共创未来——习近平在巴拿马媒体发表署名文章
+{Journal}: 中华人民共和国国务院公报
+{Year}: 2018
+{Issue}: 35
+{Pages}: 7-9
+{Keywords}: 巴拿马,习近平,巴雷拉,未来,卡洛斯,胡安,难忘的记忆,弯道超车,一路,热带水果,
+{Abstract}: <正>11月30日,在对巴拿马共和国进行国事访问前夕,国家主席习近平在巴拿马《星报》发表题为《携手前进,共创未来》的署名文章。文章如下:携手前进,共创未来中华人民共和国主席习近平应胡安·卡洛斯·巴雷拉总统邀请,我即将对巴拿马共和国进行国事访问。这是我首次访问贵国,也是中国国家主席首次到访巴拿马,我对此行充满期待。
+{ISBN/ISSN}: 1004-3438
+{Notes}: 11-1611/D
+{Database Provider}: CNKI
+
+
+{Reference Type}: Journal Article
+{Title}: 企业党员干部队伍建设问题研究
+{Author}: 徐敏;
+{Author Address}: 同煤集团矿山铁路分公司;
+{Journal}: 山西青年
+{Year}: 2019
+{Issue}: 01
+{Pages}: 210+209
+{Keywords}: 企业党员干部;;队伍建设;;问题;;对策
+{Abstract}: 介绍了企业党员干部队伍建设阶段所出现的问题,并提出相应的解决对策,它不仅能够确保企业党员干部队伍建设工作有条不紊的进行,而且还可以更好的提高党员干部队伍的综合素质水平,推动企业的发展。通过对企业党员干部队伍建设中所存在的问题进行分析和研究,以期为企业的发展提供可靠的保障,从而实现经济效益和社会效益的最大化。
+{ISBN/ISSN}: 1006-0049
+{Notes}: 14-1003/C
+{Database Provider}: CNKI
+
+
