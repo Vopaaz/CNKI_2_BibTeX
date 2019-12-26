@@ -22,7 +22,4 @@ jobs:
     - name: Run tests
       run: nosetests --with-coverage --cover-package=cnki2bibtex
     - name: Codecov
-      uses: codecov/codecov-action@v1.0.5
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-
+      run: codecov -t ${{ secrets.CODECOV_TOKEN }}
