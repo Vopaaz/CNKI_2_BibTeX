@@ -31,7 +31,11 @@ Arguments:
 
     INPUTFILE: Optional. The input .net file to be converted. If left empty, the contents in the clipboard will be used.'''
 
-    if not copy and not outputdefault and not outputfile:
+    if id_format:
+        setIDFormat(id_format)
+        click.echo(f"Id format set to {id_format}")
+
+    if not copy and not outputdefault and not outputfile and not id_format:
         click.echo("Why are you calling me ???")
         return
 
@@ -39,9 +43,6 @@ Arguments:
         if os.path.splitext(inputfile)[1] != ".net":
             logging.warning(
                 "The input file may not be a NoteExpress Entries file.")
-
-        if id_format:
-            setIDFormat(id_format)
 
         try:
             with open(inputfile, 'r', encoding="utf-8") as f:
