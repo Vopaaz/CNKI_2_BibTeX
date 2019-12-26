@@ -5,8 +5,6 @@ Converting the NoteExpress (.net) file exported by CNKI (中国知网) to BibTeX
 将中国知网导出的 NoteExpress 文献记录转换成 BibTeX 文献记录。
 
 [![Downloads](https://pepy.tech/badge/cnki2bib)](https://pepy.tech/project/cnki2bib)
-[![Downloads](https://pepy.tech/badge/cnki2bib/month)](https://pepy.tech/project/cnki2bib/month)
-![GitHub](https://img.shields.io/github/license/vopaaz/cnki_2_bibtex)
 ![PyPI](https://img.shields.io/pypi/v/cnki2bib)
 [![Actions Status](https://github.com/Vopaaz/CNKI_2_BibTeX/workflows/CI/badge.svg)](https://github.com/Vopaaz/CNKI_2_BibTeX/actions)
 [![codecov](https://codecov.io/gh/Vopaaz/CNKI_2_BibTeX/branch/master/graph/badge.svg)](https://codecov.io/gh/Vopaaz/CNKI_2_BibTeX)
