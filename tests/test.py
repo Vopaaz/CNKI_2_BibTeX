@@ -3,15 +3,13 @@ from cnki2bibtex.cnki2bib import get_bib_file_content_string
 from cnki2bibtex.misc.configure import set_id_format
 import os
 import unittest
-import sys
-sys.path.append(".")
 
 
 class IntegrationTest(unittest.TestCase):
     all_net = glob.glob("./tests/assets/*.net")
 
     def _test_bib_net_pair(self, bib, net):
-        self.maxDiff = 1000000
+        self.max_diff = 1000000
         with open(bib, "r", encoding="utf-8") as b,\
                 open(net, "r", encoding="utf-8") as n:
             self.assertEqual(b.read(),

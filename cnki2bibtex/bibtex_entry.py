@@ -5,9 +5,9 @@ from collections import defaultdict
 import jieba
 from pypinyin import lazy_pinyin as pinyin
 
-from .entry import Entry, NOT_FOUND
-from .misc.check import check_entry_has_valid_fields, check_bib_entry_has_id
-from .misc.configure import get_id_format
+from cnki2bibtex.entry import Entry, NOT_FOUND
+from cnki2bibtex.misc.check import check_entry_has_valid_fields, check_bib_entry_has_id
+from cnki2bibtex.misc.configure import get_id_format
 
 
 class BibTeXEntry(Entry):

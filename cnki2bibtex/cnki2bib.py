@@ -3,9 +3,9 @@ import pyperclip
 import logging
 import os
 
-from .bibtex_entry import BibTeXContentStringFactory
-from .cnki_entry import CNKIEntryFactory
-from .misc.configure import set_id_format
+from cnki2bibtex.bibtex_entry import BibTeXContentStringFactory
+from cnki2bibtex.cnki_entry import CNKIEntryFactory
+from cnki2bibtex.misc.configure import set_id_format
 
 
 def get_bib_file_content_string(cnki_file_content):
