@@ -80,14 +80,14 @@ Arguments:
 
     if outputdefault:
         try:
-            targetPath = (os.path.splitext(inputfile)[0] if inputfile else "out") + ".bib"
-            with open(targetPath, "w", encoding="utf-8") as f:
+            target_path = (os.path.splitext(inputfile)[0] if inputfile else "out") + ".bib"
+            with open(target_path, "w", encoding="utf-8") as f:
                 f.write(bib_file_string)
 
             if inputfile:
                 click.echo(
                     "File '{}' is created at the same directory as the source file.".format(
-                        os.path.basename(targetPath)
+                        os.path.basename(target_path)
                     )
                 )
             else:

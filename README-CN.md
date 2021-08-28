@@ -71,7 +71,7 @@ cnki2bib [OPTIONS] [INPUTFILE]
 
 开始使用 BibTeX 来管理你的文献吧！
 
-## Windows 上的骚操作
+## 双击以使用
 
 你可以在 Python/Scripts 文件夹中找到 `cnki2bib.exe` 并且将其设置为打开 .net 文件的默认程序。
 

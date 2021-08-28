@@ -89,17 +89,17 @@ class BibTeXEntry(Entry):
     def generate_optional_fields(self, cnki_entry):
         for field_name in cnki_entry:
             if cnki_entry.field_is_not_recorded(field_name) and field_name not in ["Reference Type", NOT_FOUND]:
-                self.recordOneOptionalField(cnki_entry, field_name)
+                self.record_one_optional_field(cnki_entry, field_name)
 
-    def recordOneOptionalField(self, cnki_entry, field_name):
-        saveFieldNames = field_name.split("/")
+    def record_one_optional_field(self, cnki_entry, field_name):
+        save_field_names = field_name.split("/")
         NOT_SET_LOWER_FIELD_NAME_LIST = ["ISBN", "ISSN"]
-        for saveFieldName in saveFieldNames:
-            saveFieldName = "".join(saveFieldName.strip().split(" ")).replace(",", "")
-            if saveFieldName not in NOT_SET_LOWER_FIELD_NAME_LIST:
-                self.fields[saveFieldName.lower()] = cnki_entry[field_name]
+        for save_field_name in save_field_names:
+            save_field_name = "".join(save_field_name.strip().split(" ")).replace(",", "")
+            if save_field_name not in NOT_SET_LOWER_FIELD_NAME_LIST:
+                self.fields[save_field_name.lower()] = cnki_entry[field_name]
             else:
-                self.fields[saveFieldName] = cnki_entry[field_name]
+                self.fields[save_field_name] = cnki_entry[field_name]
         cnki_entry.mark_fields_are_recorded(field_name)
 
     @check_entry_has_valid_fields
@@ -234,20 +234,20 @@ class BibTeXContentStringFactory(object):
 
     @classmethod
     def give_bib_file_content_string(cls, cnki_entries):
-        fullString = ""
+        full_string = ""
         for cnki_entry in cnki_entries:
             found = False
 
             for entry_type in cls.SPECIFIED_ENTRY_TYPE_LIST:
                 if entry_type.cnki_entry_is_this_bib_entry_type(cnki_entry):
-                    fullString += entry_type(cnki_entry).to_bib_file_string()
+                    full_string += entry_type(cnki_entry).to_bib_file_string()
                     found = True
                     break
 
             if not found:
-                fullString += Misc(cnki_entry).to_bib_file_string()
+                full_string += Misc(cnki_entry).to_bib_file_string()
 
-        return fullString
+        return full_string
 
 
 class RulesNotValidException(Exception):

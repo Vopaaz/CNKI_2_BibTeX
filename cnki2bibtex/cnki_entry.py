@@ -14,8 +14,8 @@ class CNKIEntry(Entry):
         self.fields = defaultdict(lambda: None)
         self.recorded_field_names = []
 
-    def add_field_from_line(self, stringLine):
-        re_obj = re.match(r"\{(.*)\}:(.*)", stringLine)
+    def add_field_from_line(self, string_line):
+        re_obj = re.match(r"\{(.*)\}:(.*)", string_line)
         field_name = re_obj.group(1).strip()
         field_content = re_obj.group(2).strip()
         self.fields[field_name] = field_content
