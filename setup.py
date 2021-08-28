@@ -5,9 +5,9 @@ with open(r'README.md',"r",encoding="utf-8") as f:
 
 setup(
     name='cnki2bib',
-    version='0.2.6',
+    version='0.2.7',
     author='Vopaaz',
-    author_email="liyifan945@163.com",
+    author_email="liyifan945@gmail.com",
     url="https://github.com/Vopaaz/CNKI_2_BibTeX",
     description='Converting the NoteExpress file (.net) exported by CNKI to BibTeX file (.bib)',
     long_description = long_description,
