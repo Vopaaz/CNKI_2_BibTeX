@@ -1,24 +1,22 @@
 import glob
-from cnki2bibtex.cnki2bib import getBibFileContentString
-from cnki2bibtex.misc.Configure import setIDFormat
+from cnki2bibtex.cnki2bib import get_bib_file_content_string
+from cnki2bibtex.misc.configure import set_id_format
 import os
 import unittest
-import sys
-sys.path.append(".")
 
 
 class IntegrationTest(unittest.TestCase):
     all_net = glob.glob("./tests/assets/*.net")
 
     def _test_bib_net_pair(self, bib, net):
-        self.maxDiff = 1000000
+        self.max_diff = 1000000
         with open(bib, "r", encoding="utf-8") as b,\
                 open(net, "r", encoding="utf-8") as n:
             self.assertEqual(b.read(),
-                             getBibFileContentString(n.read()))
+                             get_bib_file_content_string(n.read()))
 
     def _test_format(self, format_):
-        setIDFormat(format_)
+        set_id_format(format_)
         for net in self.all_net:
             dir_, file_ = os.path.split(net)
             bib_dir = os.path.join(dir_, format_)
