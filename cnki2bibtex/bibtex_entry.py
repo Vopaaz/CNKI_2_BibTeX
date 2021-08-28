@@ -197,6 +197,17 @@ class PhdThesis(BibTeXEntry):
         cnki_entry.mark_fields_are_recorded("Author", "Title", "Publisher", "Year")
 
 
+class mastersthesis(BibTeXEntry):
+    rules = [{"Reference Type": "Thesis"}]
+
+    def generate_required_fields_and_mark_recorded(self, cnki_entry):
+        self["author"] = cnki_entry["Author"]
+        self["title"] = cnki_entry["Title"]
+        self["school"] = cnki_entry["Publisher"]
+        self["year"] = cnki_entry["Year"]
+        cnki_entry.mark_fields_are_recorded("Author", "Title", "Publisher", "Year")
+
+
 class Proceedings(BibTeXEntry):
     rules = [{NOT_FOUND: NOT_FOUND}]  # There seems to be no way to extract the proceeding citation info on CNKI.
 
@@ -227,6 +238,7 @@ class BibTeXContentStringFactory(object):
         Manual,
         MastersThesis,
         PhdThesis,
+        mastersthesis,
         Proceedings,
         TechReport,
         Unpublished,
