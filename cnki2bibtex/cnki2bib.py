@@ -3,6 +3,10 @@ import pyperclip
 import logging
 import os
 
+import sys
+sys.path.append(".")
+sys.path.append("..")
+
 from cnki2bibtex.bibtex_entry import BibTeXContentStringFactory
 from cnki2bibtex.cnki_entry import CNKIEntryFactory
 from cnki2bibtex.misc.configure import set_id_format
