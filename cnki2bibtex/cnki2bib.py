@@ -3,10 +3,6 @@ import pyperclip
 import logging
 import os
 
-import sys
-sys.path.append(".")
-sys.path.append("..")
-
 from cnki2bibtex.bibtex_entry import BibTeXContentStringFactory
 from cnki2bibtex.cnki_entry import CNKIEntryFactory
 from cnki2bibtex.misc.configure import set_id_format
@@ -32,14 +28,22 @@ def copy_to_clipboard(content):
     default=True,
     help="Whether or not to create a default .bib file. It has the same name as the source .net file in its directory. Or if the input source is clipboard, it will be 'out.bib' in current working directory. Default: True",
 )
-@click.option("--outputfile", "-o", type=click.File("w", encoding="utf-8"), help="Create a certain output .bib file.")
+@click.option(
+    "--outputfile", "-o", type=click.Path(exists=False, dir_okay=False), help="Create a certain output .bib file"
+)
 @click.option(
     "--id-format",
     "-f",
     type=click.Choice(["title", "nameyear"]),
     help="Choose the format of the ID. Pinyin of the first words in the title, or pinyin of the first author plus year",
 )
-def launch(inputfile, copy, outputdefault, outputfile, id_format):
+@click.option(
+    "--append/--no-append",
+    "-a/-na",
+    default=False,
+    help="Whether to append at the end of output file or overwrite it. Default: False (overwrite)",
+)
+def launch(inputfile, copy, outputdefault, outputfile, id_format, append):
     """Converting a NoteExpress Entry .net file exported by CNKI to BibTeX .bib file.
 
 \b
@@ -52,7 +56,6 @@ Arguments:
         click.echo(f"Id format set to {id_format}")
 
     if not copy and not outputdefault and not outputfile and not id_format:
-        click.echo("Why are you calling me ???")
         return
 
     if inputfile != None:
@@ -85,7 +88,7 @@ Arguments:
     if outputdefault:
         try:
             target_path = (os.path.splitext(inputfile)[0] if inputfile else "out") + ".bib"
-            with open(target_path, "w", encoding="utf-8") as f:
+            with open(target_path, "a" if append else "w", encoding="utf-8") as f:
                 f.write(bib_file_string)
 
             if inputfile:
@@ -102,7 +105,9 @@ Arguments:
 
     if outputfile:
         try:
-            outputfile.write(bib_file_string)
+            with open(outputfile, "a" if append else "w", encoding="utf-8") as f:
+                f.write(bib_file_string)
+
             click.echo("The output file is created.")
         except Exception as e:
             click.echo("Failed to create a .bib file at the path you choose.")
